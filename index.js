@@ -78,6 +78,9 @@ exports.handler = async (event) => {
     // needs a status code and body
     return {
         statusCode: 200,
+        headers: {
+            "Access-Control-Allow-Origin": "*" //* allows any sites to access it, otherwise u can restrict it by replacing * with e.g. test-cors.org, so only that site can access it
+        },
         body: JSON.stringify(response)
     }
 };
